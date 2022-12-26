@@ -55,7 +55,7 @@ class Day:
   
 
 
-#@app.before_first_request
+@app.before_first_request
 def before_first_request():
     with app.app_context():
         db.drop_all()
