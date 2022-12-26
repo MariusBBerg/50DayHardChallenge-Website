@@ -53,9 +53,15 @@ class Day:
     def __repr(self):
         return self.id
   
+    def isFalse(self):
+        counter=0
+        for a in [self.wakeUp,self.mourningRoutine,self.excercise,self.readPages,self.newSkill]:
+            if not a:
+                counter+=1
+        return counter
 
 
-@app.before_first_request
+#@app.before_first_request
 def before_first_request():
     with app.app_context():
         db.drop_all()
@@ -130,6 +136,14 @@ def updateactivity(user,day,a):
     User.query.filter_by(id=session['id']).update(dict(days = d))
     db.session.commit()
 
+def skippedActivites(user):
+    today = 2 #showCorrectDay(user)
+
+    counter = 0
+    for a in user.days[1:today+1]: #First day-object in list doesnt count for some reason (Have to fix), so from object 1 to the actudalday + 1 to offset for the first day that doesnt count and we dont want to count today
+        counter += a.isFalse()
+
+    return counter
 
 
 @app.route('/', methods=['GET','POST'])
@@ -188,10 +202,9 @@ def profile():
     if tasks:
         print('hello')
         updateactivity(user,day,tasks[0])
-
     activities = userActivities(user, day)
-    print(user.days[day].wakeUp)
-    return render_template('profile.html',user=user, day = day, activities = activities)
+    print(skippedActivites(user))
+    return render_template('profile.html',user=user, day = day, actualDay = showCorrectDay(user) ,activities = activities, skippedActivities = skippedActivites(user))
 
 
 if __name__ == '__main__':
