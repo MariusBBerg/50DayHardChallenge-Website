@@ -137,7 +137,7 @@ def updateactivity(user,day,a):
     db.session.commit()
 
 def skippedActivites(user):
-    today = 2 #showCorrectDay(user)
+    today = showCorrectDay(user)
 
     counter = 0
     for a in user.days[1:today+1]: #First day-object in list doesnt count for some reason (Have to fix), so from object 1 to the actudalday + 1 to offset for the first day that doesnt count and we dont want to count today
