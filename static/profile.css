@@ -1,0 +1,95 @@
+/* Add a dark, gritty background image */
+body {
+    background-image: url('https://i.imgur.com/Ycxgx6x.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  /* Make the navbar bold and eye-catching */
+  nav {
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: #cccccc;
+  }
+  
+  /* Make the header stand out with a bold color scheme and large text */
+  header {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  /* Add some style to the main content */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  
+  main h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  main p {
+    font-size: 1.25em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  main span {
+    font-weight: bold;
+    color: #ff0000;
+  }
+  
+  /* Style the checklist */
+  main ul {
+    list-style: none;
+    font-size: 1.25em;
+    margin-bottom: 20px;
+  }
+  
+  main li {
+    margin-bottom: 10px;
+  }
+  
+  /* Add some style to the footer */
+  footer {
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 1.25em;
+    text-align: center;
+    padding: 20px;
+  }
+  

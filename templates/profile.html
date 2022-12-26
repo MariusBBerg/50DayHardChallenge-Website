@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>50 Day HARD Challenge | Profile</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="/path/to/font-awesome.css">
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">50 Day Hard Challenge</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Challenges</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Resources</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item me-auto">
+          <a class="nav-link" href="/logout">Log Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <header>
+    <h1>50 Day HARD Challenge</h1>
+  </header>
+  <main>
+    <section id="profile">
+      <h2>Welcome, <span>{{user.firstName}}</span></h2>
+      
+      <p> <a href="{{url_for('profile',day = day-1)}}">Arrow back</a> Day <span>{{day}}</span> of the 50 day hard challenge <a href="{{url_for('profile',day = day+1)}}">Arrow front</a></p>
+      
+
+      <h3>Today's Checklist:</h3>
+      <table class="table">
+        <tbody>
+          <form method='POST' id="checklist-form">
+            <tr>
+              <td>Wake up before 8AM</td>
+              <td>
+                {% if not activities.wakeUp %}
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="actv" value="0">
+                    <label class="form-check-label">{{activities.wakeUp}}</label>
+                  </div>
+                {% endif %}
+                {% if activities.wakeUp %}
+                  {{activities.wakeUp}}
+                {% endif %}
+              </td>
+            </tr>
+            <tr>
+              <td>Mourning Routine</td>
+              <td>
+                {% if not activities.mourningRoutine %}
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="actv" value="1">
+                    <label class="form-check-label">{{activities.mourningRoutine}}</label>
+                  </div>
+                {% endif %}
+                {% if activities.mourningRoutine %}
+                  {{activities.mourningRoutine}}
+                {% endif %}
+              </td>
+            </tr>
+            <tr>
+              <td>Excercise</td>
+              <td>
+                {% if not activities.excercise %}
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="actv" value="2">
+                    <label class="form-check-label">{{activities.excercise}}</label>
+                  </div>
+                {% endif %}
+                {% if activities.excercise %}
+                  {{activities.excercise}}
+                {% endif %}
+              </td>
+            </tr>
+            <tr>
+              <td>Read 10 Pages</td>
+              <td>
+                {% if not activities.readPages %}
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="actv" value="3">
+                    <label class="form-check-label">{{activities.readPages}}</label>
+                  </div>
+                {% endif %}
+                {% if activities.readPages %}
+                  {{activities.readPages}}
+                {% endif %}
+              </td>
+            </tr>
+            <tr>
+              <td>Learn New Skill</td>
+              <td>
+                {% if not activities.newSkill %}
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="actv" value="4">
+                    <label class="form-check-label">{{activities.newSkill}}</label>
+                  </div>
+                {% endif %}
+                {% if activities.newSkill %}
+                  {{activities.newSkill}}
+                  {% endif %}
+                </td>
+              </tr>
+            </form>
+          </tbody>
+        </table>
+              
+    </section>
+  </main>
+  <footer>
+    <p>Copyright 2022 50 Day HARD Challenge</p>
+  </footer>
+</body>
+<script>src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous"</script>
+<script>
+    // submit the form when a checkbox is checked 
+    // This code uses JavaScript to attach a "change" event listener to each checkbox in the form. When the checkbox is checked or unchecked, the event listener will be triggered and the form will be submitted.
+
+
+    document.querySelectorAll('input[type=checkbox]').forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        document.getElementById('checklist-form').submit();
+      });
+    });
+
+  
+</script>
+</html>

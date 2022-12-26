@@ -1,0 +1,140 @@
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  nav {
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: #cccccc;
+  }
+  
+  /* Make the header stand out with a bold color scheme and large text */
+  header {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  header p {
+    font-size: 1.5em;
+    line-height: 1.5;
+  }
+  
+  header button {
+    background-color: #ff0000;
+    border: none;
+    color: #ffffff;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+  #linkbtn {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  header button:hover {
+    background-color: #cc0000;
+  }
+  
+  /* Add some style to the sections */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+  }
+  
+  main h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  main p {
+    font-size: 1.25em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the form inputs and buttons */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  form label,
+  form input[type="text"],
+  form textarea {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+  }
+  
+  form input[type="text"],
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+  form input[type="password"],
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+  form button[type="submit"] {
+    background-color: #ff0000;
+    border: none;
+    color: #ffffff;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+      background-color: #cc0000;
+    }
+    
+    /* Add some style to the footer */
+    footer {
+      background-color: #333333;
+      color: #ffffff;
+      font-size: 1.25em;
+      text-align: center;
+      padding: 20px;
+    }
+    
